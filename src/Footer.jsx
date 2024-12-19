@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { VscSend } from "react-icons/vsc";
 import qrcode from "./image/qrcodeimg.png"
 import { FaFacebookF } from "react-icons/fa";
@@ -7,7 +9,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaRegCopyright } from "react-icons/fa6";
 export default function Footer() {
   return (
-    <>
+    <div className="max-w-[1400px] mx-auto">
         <div className="border min-h-[450px] mx-auto flex justify-around flex-wrap pt-[70px] bg-black mt-[140px] footer">
             <div className="h-[188px] border mb-8 text-white exclusive">
                 <h1 className="mb-3 text-2xl font-bold ">Exclusive</h1>
@@ -27,23 +29,23 @@ export default function Footer() {
             <div className="border h-[236px] mb-8 text-white account">
                 <h1 className="text-[20px] mb-5 font-medium">Account</h1>
                 <p className="mb-3 hover:text-red-500 hover:underline cursor-pointer">My Account</p>
-                <p className="mb-3 hover:text-red-500 hover:underline cursor-pointer">Login / Register</p>
+                <p className="mb-3 hover:text-red-500 hover:underline cursor-pointer"> <Link to="/login">Login / Register</Link></p>
                 <p className="mb-3 hover:text-red-500 hover:underline cursor-pointer">Cart</p>
                 <p className="mb-3 hover:text-red-500 hover:underline cursor-pointer">Wishlist</p>
-                <p className="hover:text-red-500 hover:underline cursor-pointer">Shop</p>
-            </div>
+                <p className="hover:text-red-500 hover:underline cursor-pointer"><Link to="/view-all-products">Shop</Link></p>
+            </div> 
             <div className="h-[196px] border mb-8 text-white quick">
                 <h1 className="text-[20px] font-medium mb-5 ">Quick Link</h1>
                 <p className="mb-3 hover:text-red-500 hover:underline cursor-pointer">Privacy Policy</p>
                 <p className="mb-3 hover:text-red-500 hover:underline cursor-pointer">Terms of Use</p>
                 <p className="mb-3 hover:text-red-500 hover:underline cursor-pointer">FAQ</p>
-                <p className="hover:text-red-500 hover:underline cursor-pointer">Contact</p>
+                <p className="hover:text-red-500 hover:underline cursor-pointer"><Link to="/contact">Contact</Link></p>
             </div>
-            <div className="border  h-[210px] mb-8 text-white download w-[200px]">
+            <div className=" border-white h-[210px] mb-8 text-white download w-[200px]">
                 <h1 className="text-[20px] mb-5 font-medium">Download App</h1>
                 <p className="text-[12px] mb-2">Save $3 with App New User Only</p>
                 <img src={qrcode} alt="" />
-                <div className="mt-3 flex justify-around border">
+                <div className="mt-1 flex justify-around  w-full border-white">
                     <FaFacebookF className="text-2xl hover:text-red-500 cursor-pointer"/>
                     <FiTwitter className="text-2xl hover:text-red-500 cursor-pointer"/>
                     <FaInstagram className="text-2xl hover:text-red-500 cursor-pointer"/> 
@@ -56,6 +58,6 @@ export default function Footer() {
             <FaRegCopyright className="mt-[5px] mr-2"/>
             <p>Copyright Haseeb Khatri. All right reserved</p>
         </div>
-    </>
+    </div>
   )
 }
